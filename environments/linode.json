@@ -9,18 +9,17 @@
   },
   "override_attributes": {
     "mysql": {
-      "server_debian_password": "aq1SW2de",
-      "server_root_password": "aq1SW2de",
-      "server_repl_password": "aq1SW2de"
+      "server_debian_password": "xxx",
+      "server_root_password": "xxx",
+      "server_repl_password": "xxx"
     },
     "gitlab": {
       "http": {
-        "hostname": "vpn.myvm.net"
+        "hostname": "xxx"
       },
       "database": {
-        "password": "aq1SW2de"
+        "password": "xxx"
       }
     }
   }
 }
-
