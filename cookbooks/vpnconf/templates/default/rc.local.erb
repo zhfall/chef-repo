@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# This script will be executed *after* all the other init scripts.
+# You can put your own initialization stuff in here if you don't
+# want to do the full Sys V style init stuff.
+
+# touch /var/lock/subsys/local
+
+for each in /proc/sys/net/ipv4/conf/*
+do
+echo 0 > $each/accept_redirects
+echo 0 > $each/send_redirects
+done
+
+sysctl -w net.ipv4.ip_forward=1
+
+/sbin/iptables -t nat -A POSTROUTING -j MASQUERADE
+

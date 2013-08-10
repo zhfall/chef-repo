@@ -1,0 +1,29 @@
+{
+"name": "blog",
+"description": "role for a blog server",
+"run_list": [
+  "recipe[yum::epel]",
+  "recipe[mysql::server]",
+  "recipe[apache2]",
+  "recipe[wordpress]"
+],
+"override_attributes": {
+    "mysql": {
+      "server_debian_password": "aq1SW2de",
+      "server_root_password": "aq1SW2de",
+      "server_repl_password": "aq1SW2de"
+    },
+    "apache": {
+      "listen_ports": [
+        "80"
+      ]
+    },
+    "wordpress": {
+      "server_aliases": ["myvm.net", "www.myvm.net"],
+      "db": {
+        "database": "blogdb",
+        "user": "wpadmin",
+        "password": "pw4Admin3"
+      }
+    }
+}

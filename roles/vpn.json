@@ -1,0 +1,39 @@
+{
+"name": "vpn",
+"description": "role for a vpn server",
+"run_list": [
+  "recipe[yum::epel]",
+  "recipe[pptpd]",
+  "recipe[openswan]",
+  "recipe[xl2tpd]",
+  "recipe[openvpn]"
+],
+"override_attributes": {
+    "pptpd": {
+      "localip": "192.168.19.1",
+      "remoteip": "192.168.19.11-30",
+      "dns1": "8.8.8.8",
+      "dns2": "8.8.4.4"
+    },
+    "openswan": {
+      "sharedkey": "vpn@user"
+    },
+    "xl2tpd": {
+      "dns1": "8.8.8.8",
+      "dns2": "8.8.4.4",
+      "iprange": "192.168.18.128-192.168.18.254",
+      "localip": "192.168.18.99"
+    },
+    "openvpn": {
+      "gateway": "vpn.myvm.net",
+      "subnet": "10.9.0.0",
+      "netmask": "255.255.255.0",
+      "key": {
+        "country": "US",
+        "province": "CA",
+        "city": "LosAngel",
+        "org": "MyVM",
+        "email": "vpn@myvm.net"
+      }
+    }
+}
