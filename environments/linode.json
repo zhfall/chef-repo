@@ -1,0 +1,26 @@
+{
+  "name": "linode",
+  "description": "",
+  "cookbook_versions": {
+  },
+  "json_class": "Chef::Environment",
+  "chef_type": "environment",
+  "default_attributes": {
+  },
+  "override_attributes": {
+    "mysql": {
+      "server_debian_password": "aq1SW2de",
+      "server_root_password": "aq1SW2de",
+      "server_repl_password": "aq1SW2de"
+    },
+    "gitlab": {
+      "http": {
+        "hostname": "vpn.myvm.net"
+      },
+      "database": {
+        "password": "aq1SW2de"
+      }
+    }
+  }
+}
+
