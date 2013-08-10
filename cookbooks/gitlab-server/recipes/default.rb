@@ -197,7 +197,7 @@ end
 # Clone GitLab
 git "#{node['gitlab']['system_user']['home_dir']}/gitlab" do
 	repository "https://github.com/gitlabhq/gitlabhq.git"
-	reference "5-1-stable"
+	reference "5-4-stable"
 	user node['gitlab']['system_user']['name']
 	group node['gitlab']['system_user']['group']
 	action :checkout
