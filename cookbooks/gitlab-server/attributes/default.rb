@@ -34,7 +34,7 @@
 
 # [--- WEB SERVER ---]
 
-	default['gitlab']['http']['hostname'] = fqdn
+	default['gitlab']['http']['hostname'] = node["ipaddress"]
 	default['gitlab']['http']['path'] = "/"
 	default['gitlab']['http']['port'] = "80"
 	default['gitlab']['http']['secure_port'] = nil
