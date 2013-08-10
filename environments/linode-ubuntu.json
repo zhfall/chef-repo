@@ -8,6 +8,14 @@
   "default_attributes": {
   },
   "override_attributes": {
+    "gitlab": {
+      "http": {
+        "hostname": "xxx"
+      },
+      "database": {
+        "password": "xxx"
+      }
+    }
   }
 }
 
